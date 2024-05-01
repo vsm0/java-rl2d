@@ -3,13 +3,13 @@
 all: build run clean
 
 build:
-	./gradlew build --parallel
+	gradle build --parallel
 
 run:
-	./gradlew run --parallel
+	gradle run --parallel
 
 clean:
-	./gradlew clean --parallel
+	gradle clean --parallel
 
 zip:
-	./gradlew distZip --warning-mode all --parallel
+	gradle distZip --warning-mode all --parallel
