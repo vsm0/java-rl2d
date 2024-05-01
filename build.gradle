@@ -1,0 +1,33 @@
+plugins {
+	id 'application'
+	id 'java'
+	id 'distribution'
+}
+
+application {
+	mainClass = 'Main'
+}
+
+repositories {
+	mavenCentral()
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
+}
+
+distributions {
+	main {
+		distributionBaseName.set("template-0.1.0")
+		contents {
+			into('app') {
+				from jar
+			}
+
+			into('data') {
+				from('data')
+			}
+		}
+	}
+}
